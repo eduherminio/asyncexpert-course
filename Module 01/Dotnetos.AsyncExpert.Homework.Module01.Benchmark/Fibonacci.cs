@@ -6,8 +6,8 @@ namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
 {
     [ShortRunJob]
     [MemoryDiagnoser]
-    [DisassemblyDiagnoser(exportCombinedDisassemblyReport: true)]
     [NativeMemoryProfiler]
+    [DisassemblyDiagnoser(exportCombinedDisassemblyReport: true)]
     public class FibonacciCalc
     {
         // HOMEWORK:
@@ -72,6 +72,8 @@ namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
         {
             yield return 1;
             yield return 2;
+            yield return 15;
+            yield return 35;
         }
     }
 }
