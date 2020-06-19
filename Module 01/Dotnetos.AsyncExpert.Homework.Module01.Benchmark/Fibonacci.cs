@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Diagnostics.Windows.Configs;
 
 namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
 {
     [ShortRunJob]
     [MemoryDiagnoser]
     [DisassemblyDiagnoser(exportCombinedDisassemblyReport: true)]
+    [NativeMemoryProfiler]
     public class FibonacciCalc
     {
         // HOMEWORK:
         // 1. Write implementations for RecursiveWithMemoization and Iterative solutions
-        // 2. Add memory profiler to the benchmark
+        // 2. Add memory profilers (MemoryDiagnoser and NativeMemoryProfiler) to the benchmark
         // 3. Run with release configuration and compare results
         // 4. Open disassembler report and compare machine code
         //
@@ -68,8 +70,8 @@ namespace Dotnetos.AsyncExpert.Homework.Module01.Benchmark
 
         public static IEnumerable<ulong> Data()
         {
-            yield return 15;
-            yield return 35;
+            yield return 1;
+            yield return 2;
         }
     }
 }
